@@ -25,27 +25,29 @@
                     <td><img src="{{ $car->pic }}" width="150" /></td>
                     <td>
 
-                        <a href="{{ route('auto.show', ['auto' => $car]) }}">
+                        <a href="{{ route('public.auto.show', ['auto' => $car]) }}">
                             <button class="btn btn-primary">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </a>
 
-                        <a href="{{ route('auto.edit', ['auto' => $car]) }}">
-                            <button class="btn btn-success">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </a>
+                        @if (Auth::check())
+                            <a href="{{ route('auto.edit', ['auto' => $car]) }}">
+                                <button class="btn btn-success">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
 
-                        <form action="{{ route('auto.destroy', ['auto' => $car]) }}" method="post">
-                            @csrf
-                            @method('DELETE')
+                            <form action="{{ route('auto.destroy', ['auto' => $car]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
 
-                        </form>
+                            </form>
+                        @endif
 
                     </td>
                 </tr>

@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Auto;
+use App\Http\Controllers\Controller;
 
 class AutoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +16,7 @@ class AutoController extends Controller
      */
     public function index()
     {
-        $auto = Auto::all();
-        return view('auto.index', compact('auto'));
+        return redirect()->route('public.auto.index');
     }
 
     /**
@@ -56,7 +57,7 @@ class AutoController extends Controller
      */
     public function show(Auto $auto)
     {
-        return view('auto.show', compact('auto'));
+        return redirect()->route('public.auto.show', $auto);
     }
 
     /**
