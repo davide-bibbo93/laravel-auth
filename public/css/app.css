@@ -10017,9 +10017,9 @@ header {
   padding: 20px 0;
   margin-bottom: 15px;
 }
-header h1 a {
+header a {
   color: #fff;
 }
-header h1 a:visited, header h1 a:active, header h1 a:link {
+header a:visited, header a:active, header a:link {
   color: #fff;
 }

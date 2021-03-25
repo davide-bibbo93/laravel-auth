@@ -8,15 +8,13 @@ header {
     padding: 20px 0;
     margin-bottom: 15px;
 
-    h1 {
 
-        a {
+    a {
+        color:#fff;
+
+        &:visited, &:active, &:link {
             color:#fff;
-
-            &:visited, &:active, &:link {
-                color:#fff;
-            }
         }
-
     }
+
 }
